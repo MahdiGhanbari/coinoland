@@ -1,0 +1,26 @@
+@use 'colors';
+
+$sizes:
+  "title-1" 600 28px,
+  "title-2" 600 20px,
+  "title-3" 600 18px,
+  "subtitle-1" 500 20px,
+  "subtitle-2" 500 18px,
+  "subtitle-3" 400 18px,
+  "content-1" 400 16px,
+  "content-2" 500 14px,
+  "content-3" 300 14px,
+  "caption" 400 12px;
+
+@each $name, $weight, $size in $sizes {
+  .#{$name} {  
+    font-weight: $weight !important;
+    font-size: $size !important;
+  }
+}
+
+@each $name, $value in colors.$all {
+  .text-#{$name} {
+    color: $value !important;
+  }
+}

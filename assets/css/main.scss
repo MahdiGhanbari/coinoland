@@ -1,0 +1,15 @@
+@import 'fonts/font';
+@import 'base/colors.scss';
+@import 'base/typography';
+@import '/node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+body {
+  font-family: 'IRANSans';
+}
+*[dir="rtl"],
+.rtl { 
+  direction: rtl !important; 
+}
+* {
+  transition: all 0.3s;
+}

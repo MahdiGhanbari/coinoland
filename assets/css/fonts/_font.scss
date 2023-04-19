@@ -1,0 +1,27 @@
+@mixin set-src($path, $name, $formats) {
+  @each $format in $formats {
+    src: url('#{$path}/#{$name}.#{$format}') format($format);
+  } 
+}
+
+@mixin set-fonts($family-name, $path, $list, $formats) {
+  @each $name, $weight in $list {
+    @font-face {
+      font-family: $family-name;
+      font-style: normal;
+      font-weight: $weight;
+      @include set-src($path, $name, $formats);
+    }
+  }
+}
+
+
+$others-path: '@/assets/css/fonts';
+
+$IRANSans-list: ('IRANSans': 'normal');
+$IRANSans-format: 'ttf', 'woff';
+@include set-fonts('IRANSans', $others-path, $IRANSans-list, $IRANSans-format);
+
+$Numbers-list: ('numbers': 'normal');
+$Numbers-format: 'ttf', 'woff', 'eot';
+@include set-fonts('Numbers', $others-path, $Numbers-list, $Numbers-format);
